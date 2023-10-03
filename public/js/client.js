@@ -97,6 +97,10 @@ const addNewMessage = ({ username, message }) => {
     </div>`;
 
     messageHistory.innerHTML += username === currentUserName ? myMsgHTML : receivedMsgHTML;
+
+    // 滚动到消息历史的底部
+    messageHistory.scrollTop = messageHistory.scrollHeight;
+
 };
 
 messageForm.addEventListener("submit", (e) => {
