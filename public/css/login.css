@@ -1,0 +1,62 @@
+body { 
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .navbar {
+      margin: 0;
+      background-color: transparent !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: black !important;
+    }
+
+    /* css/login.css */
+
+
+
+    h1 {
+        text-align: center;
+        margin-top: 50px; /* 修改标题上边距 */
+    }
+
+    #loginForm {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5); /* 添加半透明背景 */
+        border-radius: 10px; /* 添加圆角边框 */
+        box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2); /* 添加阴影效果 */
+    }
+
+    label {
+        color: white; /* 修改标签文本颜色为白色 */
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF; /* 修改按钮背景颜色 */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3; /* 修改按钮悬停时的背景颜色 */
+    }
