@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Username or ID:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            // Assuming you have a chat.html page, you can redirect to it
+            window.location.href = `chat.html?username=${username}`;
+        });
+    </script>
+</body>
+</html>
