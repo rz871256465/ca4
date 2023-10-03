@@ -9,6 +9,8 @@ const userNameParam = urlParams.get("username");
 currentUserName = userNameParam || "Guest";
 
 let userConnected = false;
+let isTyping = false;
+
 
 // 连接新用户
 const connectNewUser = () => {
@@ -123,3 +125,42 @@ socket.on("system message", (message) => {
 
     messageHistory.innerHTML += systemMessageHTML;
 });
+
+messageInputField.addEventListener("input", () => {
+    isTyping = true;
+    sendTypingStatus();
+});
+
+// 使用定时器来检测用户停止输入
+let typingTimer;
+messageInputField.addEventListener("input", () => {
+    isTyping = true;
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(() => {
+        isTyping = false;
+        sendTypingStatus();
+    }, 2000); // 2秒内没有输入则认为停止输入
+});
+
+// 发送 "typing" 事件
+const sendTypingStatus = () => {
+    if (isTyping) {
+        socket.emit("typing", currentUserName);
+    } else {
+        socket.emit("stop typing", currentUserName);
+    }
+};
+
+
+socket.on("user typing", (username) => {
+  // 显示 "某某某正在输入" 的提示，您可以在 UI 中添加一个元素用于显示
+  const typingIndicator = document.querySelector(".typing-indicator");
+  typingIndicator.textContent = `${username} 正在输入...`;
+});
+
+socket.on("user stop typing", (username) => {
+  // 隐藏 "某某某正在输入" 的提示
+  const typingIndicator = document.querySelector(".typing-indicator");
+  typingIndicator.textContent = "";
+});
+

@@ -25,7 +25,7 @@ io.on("connection", function (socket) {
     socket.userId = data;
 
     // Store the user's socket ID in the activeUsers object
-    activeUsers[data] = socket.id;
+    activeUsers[data] = { socketId: socket.id, room: 'default-room' };
 
     // Emit the list of active users to the newly connected user
     socket.emit("new user", Object.keys(activeUsers));
@@ -66,4 +66,15 @@ io.on("connection", function (socket) {
   socket.on("chat message", function (data) {
     io.emit("chat message", data);
   });
+
+
+  // 监听客户端发送的 "typing" 事件
+socket.on("typing", (username) => {
+    socket.broadcast.emit("user typing", username);
+});
+
+// 监听客户端发送的 "stop typing" 事件
+socket.on("stop typing", (username) => {
+    socket.broadcast.emit("user stop typing", username);
+});
 });
