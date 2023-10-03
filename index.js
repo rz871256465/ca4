@@ -17,6 +17,11 @@ const io = socket(server);
 // Use an object to store active users with their socket IDs
 const activeUsers = {};
 
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
+
 io.on("connection", function (socket) {
   console.log("Made socket connection");
 

@@ -1,0 +1,47 @@
+body {
+      background-image: url("public/img/background.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .navbar {
+      margin: 0;
+      background-color: transparent !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: black !important;
+    }
+
+    .centered-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .centered-images img {
+      margin-bottom: 20px;
+    }
+
+    .img-size-adjust {
+      width: 300px;
+      height: 300px;
+    }
+
+    .chat-button {
+      background-color: transparent;
+      border: 1px solid orange;
+      color: orange;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      width: 150px; /* 显式设置按钮的宽度 */
+      margin-top: 20px; /* 调整按钮与标题之间的距离 */
+    }
