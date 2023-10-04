@@ -1,0 +1,45 @@
+body { 
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .navbar {
+      margin: 0;
+      background-color: transparent !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: black !important;
+    }
+
+    .centerbox {
+    width: 80%;
+    margin: 0 auto; /* 居中 */
+    border: 2px solid #000; /* 黑色边框 */
+    border-radius: 20px; /* 圆角 20px */
+    background-color: rgba(210, 205, 184, 0.5); /* 半透明背景，透明度可自行调整 */
+    padding: 20px; /* 可根据需要调整内边距 */
+    display: flex; /* 让 rightbox 和 leftbox 并排显示 */
+    justify-content: space-between; /* 在 centerbox 内部平均分布 */
+}
+
+    .rightbox, .leftbox {
+    height: 600px; /* 高度 600px */
+    border: 2px solid #000; /* 黑色边框 */
+    border-radius: 20px; /* 圆角 20px */
+}
+
+    .rightbox {
+        width: 65%; /* 红色的rightbox占65% */
+        background-color: red; /* 红色背景 */
+    }
+
+    .leftbox {
+        width: 30%; /* 蓝色的leftbox占25% */
+        background-color: blue; /* 蓝色背景 */
+    }
