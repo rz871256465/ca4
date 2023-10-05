@@ -38,28 +38,28 @@ io.on("connection", function (socket) {
     // Broadcast the new user to all connected clients
     io.emit("user connected", Object.keys(activeUsers));
 
-    // 发送系统消息，通知用户加入房间
+    // Send a system message to notify the user to join the room
     const systemMessage = `${data} join the room`;
     io.emit("system message", systemMessage);
   });
 
   socket.on("user connected", function (data) {
     console.log("User connected:", data);
-  // 处理用户连接事件，更新用户列表或执行其他操作
+  // Handle user connection events, update the user list or perform other actions
   });
 
   socket.on("disconnect", function () {
     const disconnectedUserId = socket.userId;
-    console.log("User disconnected:", disconnectedUserId); // 添加日志以检查断开连接的用户名
+    console.log("User disconnected:", disconnectedUserId); // Add logs to check disconnected usernames
 
-    // 删除用户的 socket ID
+    // Deleting a user's socket ID
     delete activeUsers[disconnectedUserId];
 
     if (disconnectedUserId) {
-        // 构建系统消息
+        // Building System Messages
         const systemMessage = `${disconnectedUserId} left the room`;
 
-        // 发送系统消息给所有连接的客户端
+        // Sends a system message to all connected clients
         io.emit("system message", systemMessage);
 
         // Emit the updated list of active users to all connected clients
@@ -73,12 +73,12 @@ io.on("connection", function (socket) {
   });
 
 
-  // 监听客户端发送的 "typing" 事件
+  // Listen for "typing" events from the client.
 socket.on("typing", (username) => {
     socket.broadcast.emit("user typing", username);
 });
 
-// 监听客户端发送的 "stop typing" 事件
+// Listen for "stop typing" events from the client.
 socket.on("stop typing", (username) => {
     socket.broadcast.emit("user stop typing", username);
 });
