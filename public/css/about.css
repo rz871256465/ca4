@@ -37,16 +37,22 @@ body {
   flex: 5; /* Occupy 5/12 of the available space */
   background-color: rgba(238, 236, 236, 0.758);
   margin-right: 10px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  padding: 20px;
 }
 
 /* Style for the left box inside the centered container */
 .leftbox {
+  padding: 10px;
   flex: 5; /* Occupy 5/12 of the available space */
   background-color: rgba(238, 236, 236, 0.758);
   display: flex;
+  border-radius: 20px;
   flex-direction: column;
   justify-content: space-between;
   height: 700px;
+  border: 2px solid #000;
 }
 
 /* Style for images inside the left box */
