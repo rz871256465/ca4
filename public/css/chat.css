@@ -3,38 +3,39 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #b87931; 
+    background-color: #b87931;
 }
 
+/* Create a flex container for the layout */
+.container {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+}
 
-/* Style the sidenav */
+/* Style the sidebar */
 .sidenav {
-    border: 2px solid black; 
-    margin-top: 20px;
-    margin-left: 10px;
+    margin: 30px;
+    border: 2px solid black;
     width: 180px;
-    background-color: #da4915b3; 
+    background-color: #da4915b3;
     color: #fff;
     padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 400px;
-    border-radius: 50px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+    height: 50vh; 
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .inbox__people {
     color: #000000;
-    text-align: center; 
+    text-align: center;
 }
 
 .inbox__people h4 {
     color: #f9f9f9ee;
-    margin: 10px 0; 
-    font-size: 18px; 
+    margin: 10px 0;
+    font-size: 18px;
 }
 
 /* Style the active users list */
@@ -44,61 +45,80 @@ body, html {
 }
 
 #activeUsersList li {
-    margin-bottom: 10px; 
-    background-color: #ffaa33; 
-    border-radius: 10px; 
-    padding: 10px 15px; 
+    margin-bottom: 10px;
+    background-color: #ffaa33;
+    border-radius: 10px;
+    padding: 10px 15px;
     color: #fff;
-    font-size: 16px; 
-    display: flex; 
+    font-size: 16px;
+    display: flex;
     align-items: center;
 }
 
 /* Add a cute cartoon icon */
 #activeUsersList li::before {
-    content: "\1F60D"; 
-    font-size: 24px; 
-    margin-right: 10px; 
+    content: "\1F60D";
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Style the all container using Flexbox */
+.all {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Space between children */
+    margin-left: 10px; /* Add some margin to separate from sidenav */
+    flex: 1; /* Expand to fill available space */
 }
 
 /* Style the content area */
 .content {
-    margin-left: 240px; 
+    margin: 30px;
+    width: 80%; /* 65% width */
     padding: 20px;
-    background-color: #ee105ed5; 
+    background-color: #ee105ed5;
     border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    height: 400px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 60vh; 
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
 }
 
 .messages__history {
+    flex-grow: 1; /* Grow to fill available space */
     background-color: #f5f5f5;
     padding: 10px;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin-bottom: 10px;
-    height: 300px; 
     overflow-y: scroll;
 }
 
-.message_form__input {
+/* Style the message input and button using Flexbox */
+.message_form {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center;
     margin-top: 20px;
-    width: 80%;
+}
+
+.message_form__input {
+    flex: 1; /* Expand to fill available space */
     padding: 10px;
     border: none;
-    border-radius: 20px; 
+    border-radius: 20px;
     font-size: 16px;
-    border: 2px solid black; 
+    border: 2px solid black;
+    margin-right: 10px; /* Add space between input and button */
 }
 
 .message_form__button {
     padding: 10px 20px;
-    background-color: #ffaa33; 
+    background-color: #ffaa33;
     color: #fff;
     border: none;
-    border-radius: 20px; 
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-
 }
 
 /* Style the typing indicator if needed */
@@ -109,12 +129,11 @@ body, html {
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #ffaa33; 
+    background-color: #ffaa33;
     border-radius: 10px;
 }
-.gameimg{
+
+.gameimg {
     margin-top: -30px;
     margin-left: 240px;
-    
-
 }
