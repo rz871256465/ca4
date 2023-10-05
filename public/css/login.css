@@ -1,62 +1,70 @@
+
 body { 
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      margin: 0;
-    }
-    
-    .navbar {
-      margin: 0;
-      background-color: transparent !important;
-    }
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-size: 100% 100%; /* Set background image size to cover the entire viewport */
+  background-attachment: fixed; /* Keep the background fixed while scrolling */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange child elements in a column */
+  height: 100vh; /* Make the body take up 100% of the viewport height */
+  margin: 0; /* Remove default margin */
+}
 
-    .navbar-nav .nav-link {
-      color: black !important;
-    }
+/* Style for the navigation bar */
+.navbar {
+  margin: 0; /* Remove default margin for the navbar */
+  background-color: transparent !important; /* Make the background of the navbar transparent */
+}
 
-    /* css/login.css */
+/* Style for navigation links in the navbar */
+.navbar-nav .nav-link {
+  color: black !important; /* Set the text color for navigation links to black */
+}
 
+/* CSS for login page styles */
+/* css/login.css */
 
+/* Center align the heading */
+h1 {
+  text-align: center;
+  margin-top: 50px; /* Add top margin to the heading */
+}
 
-    h1 {
-        text-align: center;
-        margin-top: 50px; 
-    }
+/* Style for the login form container */
+#loginForm {
+  max-width: 300px; /* Set maximum width for the form */
+  margin: 0 auto; /* Center align the form horizontally */
+  padding: 20px; /* Add padding to the form */
+  background: rgba(0, 0, 0, 0.5); /* Apply a semi-transparent background */
+  border-radius: 10px; /* Add rounded corners to the form */
+  box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2); /* Add a box shadow to the form */
+}
 
-    #loginForm {
-        max-width: 300px;
-        margin: 0 auto;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.5); 
-        border-radius: 10px; 
-        box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2); 
-    }
+/* Style for labels in the form */
+label {
+  color: white; /* Set text color for labels to white */
+}
 
-    label {
-        color: white; 
-    }
+/* Style for text input fields */
+input[type="text"] {
+  width: 100%; /* Set width to 100% of the container */
+  padding: 10px; /* Add padding to input fields */
+  margin: 10px 0; /* Add margin above and below input fields */
+  border: none; /* Remove borders from input fields */
+  border-radius: 5px; /* Add rounded corners to input fields */
+}
 
-    input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 5px;
-    }
+/* Style for the submit button */
+button[type="submit"] {
+  width: 100%; /* Set width to 100% of the container */
+  padding: 10px; /* Add padding to the button */
+  background-color: #007BFF; /* Set background color for the button */
+  color: white; /* Set text color for the button */
+  border: none; /* Remove borders from the button */
+  border-radius: 5px; /* Add rounded corners to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
 
-    button[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #007BFF; 
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-        background-color: #0056b3; 
-    }
+/* Style for the submit button on hover */
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

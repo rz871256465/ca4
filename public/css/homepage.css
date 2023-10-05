@@ -1,46 +1,53 @@
-body { 
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      margin: 0;
-    }
-    
-    .navbar {
-      margin: 0;
-      background-color: transparent !important;
-    }
 
-    .navbar-nav .nav-link {
-      color: black !important;
-    }
+body {
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-size: 100% 100%; /* Set background image size to cover the entire viewport */
+  background-attachment: fixed; /* Keep the background fixed while scrolling */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange child elements in a column */
+  height: 100vh; /* Make the body take up 100% of the viewport height */
+  margin: 0; /* Remove default margin */
+}
 
-    .centered-images {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+/* Style for the navigation bar */
+.navbar {
+  margin: 0; /* Remove default margin for the navbar */
+  background-color: transparent !important; /* Make the background of the navbar transparent */
+}
 
-    .centered-images img {
-      margin-bottom: 20px;
-    }
+/* Style for navigation links in the navbar */
+.navbar-nav .nav-link {
+  color: black !important; /* Set the text color for navigation links to black */
+}
 
-    .img-size-adjust {
-      width: 300px;
-      height: 300px;
-    }
+/* Center align images in a container */
+.centered-images {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange child elements in a column */
+  align-items: center; /* Center align child elements horizontally */
+}
 
-    .chat-button {
-      background-color: transparent;
-      border: 1px solid orange;
-      color: orange;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      width: 150px; 
-      margin-top: 20px; 
-    }
+/* Style for images inside the centered-images container */
+.centered-images img {
+  margin-bottom: 20px; /* Add space below images */
+}
+
+/* Adjust the size of images */
+.img-size-adjust {
+  width: 300px; /* Set width to 300 pixels */
+  height: 300px; /* Set height to 300 pixels */
+}
+
+/* Style for a chat button */
+.chat-button {
+  background-color: transparent; /* Make the button background transparent */
+  border: 1px solid orange; /* Set a 1px solid orange border */
+  color: orange; /* Set text color to orange */
+  padding: 10px 20px; /* Add padding to the button */
+  border-radius: 5px; /* Add rounded corners */
+  text-align: center; /* Center align the text inside the button */
+  font-size: 16px; /* Set font size to 16 pixels */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  width: 150px; /* Set button width to 150 pixels */
+  margin-top: 20px; /* Add space above the button */
+}
