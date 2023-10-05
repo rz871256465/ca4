@@ -159,7 +159,7 @@ const sendTypingStatus = () => {
 socket.on("user typing", (username) => {
   // 显示 "某某某正在输入" 的提示，您可以在 UI 中添加一个元素用于显示
   const typingIndicator = document.querySelector(".typing-indicator");
-  typingIndicator.textContent = `${username} 正在输入...`;
+  typingIndicator.textContent = `${username} is typing...`;
 });
 
 socket.on("user stop typing", (username) => {

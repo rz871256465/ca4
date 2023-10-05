@@ -39,7 +39,7 @@ io.on("connection", function (socket) {
     io.emit("user connected", Object.keys(activeUsers));
 
     // 发送系统消息，通知用户加入房间
-    const systemMessage = `${data} 加入了房间`;
+    const systemMessage = `${data} join the room`;
     io.emit("system message", systemMessage);
   });
 
@@ -57,7 +57,7 @@ io.on("connection", function (socket) {
 
     if (disconnectedUserId) {
         // 构建系统消息
-        const systemMessage = `${disconnectedUserId} 已下线`;
+        const systemMessage = `${disconnectedUserId} left the room`;
 
         // 发送系统消息给所有连接的客户端
         io.emit("system message", systemMessage);
