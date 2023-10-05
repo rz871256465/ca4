@@ -41,6 +41,6 @@ body {
       text-align: center;
       font-size: 16px;
       cursor: pointer;
-      width: 150px; /* 显式设置按钮的宽度 */
-      margin-top: 20px; /* 调整按钮与标题之间的距离 */
+      width: 150px; 
+      margin-top: 20px; 
     }

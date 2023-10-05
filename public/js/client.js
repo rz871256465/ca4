@@ -3,7 +3,7 @@ const userListContainer = document.querySelector(".inbox__people");
 
 let currentUserName = "";
 
-// 获取 URL 中的用户名
+// Get the username in the URL
 const urlParams = new URLSearchParams(window.location.search);
 const userNameParam = urlParams.get("username");
 currentUserName = userNameParam || "Guest";
@@ -12,7 +12,7 @@ let userConnected = false;
 let isTyping = false;
 
 
-// 连接新用户
+// Connecting new users
 const connectNewUser = () => {
     socket.emit("new user", currentUserName);
     userConnected = true;
@@ -22,7 +22,7 @@ const connectNewUser = () => {
 const addUserToUserList = (userName) => {
     const userElement = document.querySelector(`[data-username="${userName}"]`);
     if (!userElement) {
-        // 添加用户到列表
+        // Adding users to the list
         const userBoxHTML = `
         <div class="chat_user" data-username="${userName}">
             <h5>${userName}</h5>
@@ -36,7 +36,7 @@ const addUserToUserList = (userName) => {
 };
 
 
-// 在用户登录时调用 connectNewUser 函数
+// The connectNewUser function is called when the user logs in.
 connectNewUser();
 
 socket.on("new user", (data) => {
@@ -65,7 +65,7 @@ socket.on("user disconnected", (data) => {
 });
 
 
-// 处理接收和显示消息的功能
+// Functions that handle receiving and displaying messages
 const messageInputField = document.querySelector(".message_form__input");
 const messageForm = document.querySelector(".message_form");
 const messageHistory = document.querySelector(".messages__history");
@@ -98,7 +98,7 @@ const addNewMessage = ({ username, message }) => {
 
     messageHistory.innerHTML += username === currentUserName ? myMsgHTML : receivedMsgHTML;
 
-    // 滚动到消息历史的底部
+    // Scroll to the bottom of the message history
     messageHistory.scrollTop = messageHistory.scrollHeight;
 
 };
@@ -135,7 +135,7 @@ messageInputField.addEventListener("input", () => {
     sendTypingStatus();
 });
 
-// 使用定时器来检测用户停止输入
+// Use a timer to detect when the user stops input
 let typingTimer;
 messageInputField.addEventListener("input", () => {
     isTyping = true;
@@ -143,10 +143,10 @@ messageInputField.addEventListener("input", () => {
     typingTimer = setTimeout(() => {
         isTyping = false;
         sendTypingStatus();
-    }, 2000); // 2秒内没有输入则认为停止输入
+    }, 2000); // If there is no input within 2 seconds, the input is considered to be stopped.
 });
 
-// 发送 "typing" 事件
+// Send "typing" event
 const sendTypingStatus = () => {
     if (isTyping) {
         socket.emit("typing", currentUserName);
@@ -157,13 +157,13 @@ const sendTypingStatus = () => {
 
 
 socket.on("user typing", (username) => {
-  // 显示 "某某某正在输入" 的提示，您可以在 UI 中添加一个元素用于显示
+  // To display the "so-and-so is typing" prompt
   const typingIndicator = document.querySelector(".typing-indicator");
   typingIndicator.textContent = `${username} is typing...`;
 });
 
 socket.on("user stop typing", (username) => {
-  // 隐藏 "某某某正在输入" 的提示
+  // Hide the "so-and-so is typing" message.
   const typingIndicator = document.querySelector(".typing-indicator");
   typingIndicator.textContent = "";
 });
