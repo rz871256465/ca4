@@ -1,9 +1,12 @@
 /* Reset some default styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #b87931;
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-size: 100% 100%; /* Set background image size to cover the entire viewport */
+  background-attachment: fixed; /* Keep the background fixed while scrolling */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange child elements in a column */
+  height: 100vh; /* Make the body take up 100% of the viewport height */
+  margin: 0; /* Remove default margin */
 }
 
 /* Create a flex container for the layout */
@@ -86,7 +89,7 @@ body, html {
 
 .messages__history {
     flex-grow: 1; /* Grow to fill available space */
-    background-color: #f5f5f5;
+    background-color: #f5f5f5da;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;

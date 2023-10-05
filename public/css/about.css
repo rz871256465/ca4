@@ -1,45 +1,58 @@
-body { 
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      margin: 0;
-    }
 
-    .navbar {
-      margin: 0;
-      background-color: transparent !important;
-    }
-
-    .navbar-nav .nav-link {
-      color: black !important;
-    }
-
-    .centerbox {
-    width: 80%;
-    margin: 0 auto; 
-    border: 2px solid #000; 
-    border-radius: 20px; 
-    background-color: rgba(210, 205, 184, 0.5); 
-    padding: 20px; 
-    display: flex; 
-    justify-content: space-between; 
+body {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
 }
 
-    .rightbox, .leftbox {
-    padding: 20px;
-    border: 2px solid #000; 
-    border-radius: 20px; 
+/* Style for the navigation bar */
+.navbar {
+  margin: 0;
+  background-color: transparent !important;
 }
 
-    .rightbox {
-        width: 65%; 
-        background-color: red; 
-    }
+/* Style for navigation links */
+.navbar-nav .nav-link {
+  color: black !important;
+}
 
-    .leftbox {
-        width: 30%; 
-        background-color: blue; 
-    }
+/* Create a centered container with specific styling */
+.centerbox {
+  width: 80%;
+  margin: 0 auto; /* Center the container horizontally */
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: rgba(210, 205, 184, 0.5);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Style for the right box inside the centered container */
+.rightbox {
+  flex: 5; /* Occupy 5/12 of the available space */
+  background-color: rgba(238, 236, 236, 0.758);
+  margin-right: 10px;
+}
+
+/* Style for the left box inside the centered container */
+.leftbox {
+  flex: 5; /* Occupy 5/12 of the available space */
+  background-color: rgba(238, 236, 236, 0.758);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+}
+
+/* Style for images inside the left box */
+.leftbox img {
+  border: 2px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+}
